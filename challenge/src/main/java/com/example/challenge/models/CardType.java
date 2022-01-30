@@ -1,14 +1,20 @@
 package com.example.challenge.models;
 
 public abstract class CardType {
-  private double interestRate;
+  private String name;
+  protected double interestRate;
 
-  CardType(double interestRate){
+  public CardType(String name, double interestRate){
     setInterestRate(interestRate);
+    setName(name);
   }
 
-  public double calculateInterest(double cardBalance){
-    return cardBalance * (interestRate / 100);
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public double getInterestRate() {

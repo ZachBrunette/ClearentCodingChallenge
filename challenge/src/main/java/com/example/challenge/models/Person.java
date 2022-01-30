@@ -1,23 +1,33 @@
 package com.example.challenge.models;
 
+import java.util.ArrayList;
+
 public class Person {
-  private Wallet[] wallets;
+  private ArrayList<Wallet> wallets;
 
   //constructor
-  Person(){
-    
+  public Person(){
+    wallets = new ArrayList<Wallet>();
   }
 
-  public Wallet[] getWallets() {
+  public ArrayList<Wallet> getWallets() {
     return wallets;
   }
 
-  public void setWallets(Wallet[] wallets) {
+  public void setWallets(ArrayList<Wallet> wallets) {
     this.wallets = wallets;
   }
 
   public void addWallet(Wallet wallet){
-    wallets[wallets.length] = wallet;
+    wallets.add(wallet);
+  }
+
+  public double calculateInterest(){
+    double total = 0.0;
+    for(int i = 0; i < wallets.size(); i++){
+      total += wallets.get(i).calculateInterest();
+    }
+    return total;
   }
 
 }

@@ -1,11 +1,15 @@
 package com.example.challenge.models;
 
 public class Card extends CardType{
-  public double balance;
+  protected double balance;
 
-  Card(double balance, double interestRate){
-    super(interestRate);
+  public Card(String name, double balance, double interestRate){
+    super(name, interestRate);
     setBalance(balance);
+  }  
+
+  public double calculateInterest(){
+    return balance * (interestRate / 100);
   }
 
   public double getBalance() {
