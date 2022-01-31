@@ -2,10 +2,11 @@ package com.example.challenge.models;
 
 import java.util.ArrayList;
 
-public class Wallet {
+public class Wallet implements Interest {
   private ArrayList<Card> cards;
 
   public Wallet(){
+    //dependency injection
     cards = new ArrayList<Card>();
   }
 

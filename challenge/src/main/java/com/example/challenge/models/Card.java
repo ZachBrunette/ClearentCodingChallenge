@@ -1,6 +1,6 @@
 package com.example.challenge.models;
 
-public class Card extends CardType{
+public class Card extends CardType implements Interest{
   protected double balance;
 
   public Card(String name, double balance, double interestRate){
